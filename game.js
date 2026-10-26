@@ -21,6 +21,8 @@ const CONFIG = {
   // Ссылки финала
   passUrl: 'https://t.me/YunusovArtur_bot?start=news_pass',
   shareBotUrl: 'https://t.me/YunusovArtur_bot?start=news_share',
+  nextUrl: 'https://t.me/YunusovArtur_bot?start=speculant',
+  skyUrl: 'https://t.me/YunusovArtur_bot?start=skyrocket_news',
   shareText: 'Моё звание в игре «Новостной трейдер» — «{title}», результат {pct}. Сможешь лучше отличить новость от шума?',
 };
 
@@ -427,13 +429,17 @@ function scrEnd() {
     ${success ? `
     <div class="card pass" id="pass">
       <div class="k up">УСПЕШНОЕ ПРОХОЖДЕНИЕ</div>
-      <h3>Ты прошёл игру. Доступ к набору в закрытый канал Skyrocket открыт</h3>
-      <a class="btn primary" id="passBtn" href="${CONFIG.passUrl}" target="_blank" rel="noopener" data-tg>Перейти к набору в Skyrocket →</a>
+      <h3>Ты прошёл игру. Открыт финальный уровень (7 из 7) — «Спекулянт: Точка Б»</h3>
+      <p>Путь трейдера от первого депозита до первых денег или ликвидации на реальных котировках 2018–2026. Самая сложная игра в лестнице.</p>
+      <a class="btn primary" id="passBtn" href="${CONFIG.passUrl}" target="_blank" rel="noopener" data-tg>Играть в финальный уровень 🎮</a>
+      <a class="btn ghost" id="skyBtn" href="${CONFIG.skyUrl}" target="_blank" rel="noopener" data-tg>Узнать про закрытый канал 🔒</a>
       <button class="btn ghost" data-act="again">Сыграть ещё раз</button>
     </div>` : `
     <div class="card fail" id="fail">
-      <h3>Почти. Попробуй ещё раз — доступ к закрытому каналу открывается только после успешного прохождения</h3>
+      <h3>Почти. Пройди игру, и откроется финальный уровень — «Спекулянт: Точка Б»</h3>
       <button class="btn gold" data-act="again">Попробовать ещё раз</button>
+      <a class="btn ghost" id="nextBtn" href="${CONFIG.nextUrl}" target="_blank" rel="noopener" data-tg>Всё равно перейти к финалу</a>
+      <a class="btn ghost" id="skyBtn" href="${CONFIG.skyUrl}" target="_blank" rel="noopener" data-tg>Узнать про закрытый канал 🔒</a>
     </div>`}
     <div class="card"><div class="k">СТАТИСТИКА</div>
       <div class="kv">
